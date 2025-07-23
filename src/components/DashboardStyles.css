@@ -1,111 +1,67 @@
-/* Reset & Global */
-body, html {
-  margin: 0;
-  padding: 0;
+.dashboard-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #e6f0ff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f4f6fb;
 }
 
-/* Main container */
-.profile-page {
-  padding: 40px 20px;
-  min-height: 100vh;
-  background: #f4f6fb;
-}
-
-/* Header Title */
-.profile-title {
+.dashboard-header {
   text-align: center;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #1a2233;
   margin-bottom: 30px;
 }
 
-/* Application list layout */
-.application-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/* Card style for applications */
-.application-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 24px 28px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.application-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08);
-}
-
-/* Card content */
-.application-card p {
-  font-size: 16px;
-  color: #333;
-  margin: 8px 0;
-}
-
-/* Resume link */
-.application-card a {
-  color: #0056d2;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.application-card a:hover {
-  text-decoration: underline;
-}
-
-/* Loading and no-data messages */
-.profile-loading,
-.profile-no-data {
-  text-align: center;
-  font-size: 18px;
-  color: #777;
-  margin-top: 40px;
-}
-
-/* Dashboard header card (if used elsewhere) */
-.dashboard-container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 40px 32px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  text-align: center;
+.dashboard-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .dashboard-title {
-  font-size: 2.4rem;
+  font-size: 30px;
   font-weight: 700;
-  color: #1a2233;
-  margin-bottom: 16px;
+  color: #003366;
+  margin-bottom: 5px;
 }
 
 .dashboard-desc {
-  font-size: 1.1rem;
-  color: #007bff;
+  font-size: 16px;
+  color: #333;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .application-card {
-    padding: 20px;
-  }
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
 
-  .profile-title {
-    font-size: 1.6rem;
-  }
+.card {
+  background-color: #ffffff;
+  border: 2px solid #99ccff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
 
-  .dashboard-container {
-    padding: 20px;
-  }
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #3399ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  color: #003366;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
 }
