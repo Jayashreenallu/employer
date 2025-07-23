@@ -1,98 +1,111 @@
-/* For profile page styling */
-
+/* Reset & Global */
 body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f4f6fb;
 }
 
+/* Main container */
 .profile-page {
-  background-color: #f4f4f4;
+  padding: 40px 20px;
   min-height: 100vh;
-  padding: 2rem;
-  font-family: Arial, sans-serif;
+  background: #f4f6fb;
 }
 
+/* Header Title */
 .profile-title {
   text-align: center;
-  color: #333;
-  font-size: 28px;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a2233;
+  margin-bottom: 30px;
 }
 
+/* Application list layout */
 .application-list {
-  max-width: 800px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
+/* Card style for applications */
 .application-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .application-card:hover {
   transform: scale(1.01);
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08);
 }
 
+/* Card content */
 .application-card p {
-  margin: 10px 0;
-  color: #444;
   font-size: 16px;
+  color: #333;
+  margin: 8px 0;
 }
 
+/* Resume link */
 .application-card a {
-  color: #007bff;
+  color: #0056d2;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .application-card a:hover {
   text-decoration: underline;
 }
 
-.loading,
-.no-data {
+/* Loading and no-data messages */
+.profile-loading,
+.profile-no-data {
   text-align: center;
-  color: #555;
-  margin-top: 2rem;
+  font-size: 18px;
+  color: #777;
+  margin-top: 40px;
 }
 
+/* Dashboard header card (if used elsewhere) */
 .dashboard-container {
-  max-width: 700px;
-  margin: 64px auto 0 auto;
-  padding: 40px 28px;
-  background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   text-align: center;
- 
 }
 
 .dashboard-title {
-  color: #1a2233;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 18px;
+  color: #1a2233;
+  margin-bottom: 16px;
 }
 
 .dashboard-desc {
+  font-size: 1.1rem;
   color: #007bff;
-  font-size: 1.15rem;
-  margin-bottom: 0;
 }
 
-@media (max-width: 700px) {
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .application-card {
+    padding: 20px;
+  }
+
+  .profile-title {
+    font-size: 1.6rem;
+  }
+
   .dashboard-container {
-    padding: 16px 4px;
-    max-width: 98vw;
-  }
-  .dashboard-title {
-    font-size: 1.3rem;
-  }
-  .dashboard-desc {
-    font-size: 1rem;
+    padding: 20px;
   }
 }

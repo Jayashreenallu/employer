@@ -1,5 +1,6 @@
 import React from "react";
-import "./DashboardStyles.css"; // Assuming you have a CSS file for styling
+ // Assuming you have a CSS file for styling
+import "./DashBoardStyles.css";
 
 const JobProviderDashboard = () => {
   const company = localStorage.getItem("selectedCompany");
