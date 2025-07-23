@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./DashBoardStyles.css"; // Assuming you have a CSS file for styling
+import "./DashBoardStyles.css";
 
 const JobProviderProfile = () => {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const company = localStorage.getItem("selectedCompany") || "";
+  const companyName = localStorage.getItem("selectedCompany") || "";
+  const companyId = parseInt(localStorage.getItem("selectedCompanyId"));
 
   useEffect(() => {
     const loadData = async () => {
@@ -13,7 +14,7 @@ const JobProviderProfile = () => {
         const jobsRes = await fetch("http://localhost:5000/jobs");
         const jobsData = await jobsRes.json();
 
-        const companyJobs = jobsData.filter((job) => job.company === company);
+        const companyJobs = jobsData.filter((job) => job.companyId === companyId);
         const jobIds = companyJobs.map((job) => job.id);
 
         const appsRes = await fetch("http://localhost:5000/applications");
@@ -28,16 +29,16 @@ const JobProviderProfile = () => {
       }
     };
 
-    if (company) {
+    if (companyId) {
       loadData();
     } else {
       setLoading(false);
     }
-  }, [company]);
+  }, [companyId]);
 
   return (
     <div className="profile-container">
-      <h2 className="profile-title">{company} – Job Applications</h2>
+      <h2 className="profile-title">{companyName} – Job Applications</h2>
 
       {loading ? (
         <p className="profile-loading">Loading...</p>
