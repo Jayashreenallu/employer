@@ -26,6 +26,8 @@ const SelectCompany = () => {
     );
 
     if (selectedCompany) {
+      localStorage.setItem("selectedCompany", selectedCompany.name);
+      localStorage.setItem("companyId", selectedCompany.id);
       navigate("/dashboard");
     } else {
       setError("Invalid email or password");
@@ -35,6 +37,7 @@ const SelectCompany = () => {
   return (
     <div className="select-container">
       <h2>Select Company and Login</h2>
+
       <select value={company} onChange={(e) => setCompany(e.target.value)}>
         <option value="">-- Select Company --</option>
         {companies.map((c) => (
